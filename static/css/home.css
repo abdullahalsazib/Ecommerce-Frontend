@@ -1,0 +1,25 @@
+.navbar{
+    background-color: rgba(12, 12, 199, 0.911) ;
+    font-size: 0.875rem;
+}
+
+.container1{
+    height: 300px;
+
+}
+.container2{
+    height: 300px;
+}
+.img1{
+    height: 300px;
+    width: 100%;
+
+}
+.img2{
+    height: 300px;
+    width:100%;
+}
+footer{
+    background-color: rgba(12, 12, 199, 0.911);
+    font-size: 0.875rem;
+}

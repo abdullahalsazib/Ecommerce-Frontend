@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/footer.css">
+  <link rel="stylesheet" href="static/css/home.css">
+  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.min.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+
+</head>
+
+<body class="bg-light ">
+
+  <nav class="navbar navbar-expand-lg text-light  py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center px-5" href="#">
+        <a href="home.html" class="text-decoration-none text-light">
+          <h1 class="logo fs-3 fw-bold ms-2 mb-0">SHOPZEN</h1>
+        </a>
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon bg-light"><a href="cart.html"></a></span>
+    </button>
+    <div class="collapse navbar-collapse col-md-8" id="navbarNav">
+      <ul class="navbar-nav ms-auto" id="navbarElement">
+        
+        <!-- <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="home.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="service.html">SHOPE</a></li>
+        <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="booking.html">ABOUT US</a></li>
+        <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="contact.html">CONTACT</a></li>
+        <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="registration.html">SIGN UP</a></li>
+        <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="login.html">LOGIN</a></li>
+        <li class="p-2">
+          <form id="logout" onsubmit="handleLogout(event)" class="m-0">
+            <div class="text-center">
+              <button
+                type="submit"
+                class="btn btn-danger px-4 py-2 rounded"
+                aria-label="Logout"
+              >
+                Logout
+              </button>
+            </div>
+          </form>
+        </li> -->
+      </ul>
+    </div>
+
+  </nav>
+  <div class="All col-12  p-5  bg-light">
+
+    <div class="swiffy-slider slider-nav-visible slider-nav-animation slider-nav-animation-slow" id="animatedText">
+
+      <ul class="slider-container" id="container1">
+          <li id="slide1" class="">
+              <div>
+                  <img src="image/laptop-banner.webp" alt="..." loading="lazy" class="w-100">
+                  <h1 class="display-1  fw-bold text-light custom-animated-text position-absolute top-50 start-50 translate-middle">
+               
+                  </h1>
+              </div>
+  
+          </li>
+          <li id="slide2" class="">
+              <div>
+                  <img src="image/laptop-banner.webp" alt="..." loading="lazy" class="w-100">
+                  <h1 class="display-1 fw-bold text-light custom-animated-text position-absolute top-50 start-50 translate-middle">
+              
+                  </h1>
+              </div>
+          </li>
+          <li id="slide3" class="">
+              <div>
+                  <img src="image/laptop-banner.webp" alt="..." loading="lazy" class="w-100">
+                  <h1 class="display-1 text-light  fw-bold custom-animated-text position-absolute top-50 start-50 translate-middle">
+              
+                  </h1>
+              </div>
+          </li>
+      </ul>
+  
+      <button type="button" class="slider-nav" aria-label="Go to previous"></button>
+      <button type="button" class="slider-nav slider-nav-next" aria-label="Go to next"></button>
+  
+      <div class="slider-indicators">
+          <button aria-label="Go to slide" class=""></button>
+          <button aria-label="Go to slide" class=""></button>
+          <button aria-label="Go to slide" class=""></button>
+          <button aria-label="Go to slide" class="active"></button>
+          <button aria-label="Go to slide"></button>
+      </div>
+  </div>
+
+
+  <div class="product_container col-12 p-5">
+    <div class="title text-center fs-3 bg-primary p-2 my-3">
+      <h3>All Product</h3>
+    </div>
+
+    <div class="swiffy-slider slider-item-show5 slider-nav-round slider-nav-page">
+      <ul class="slider-container" id="slider-container">
+   
+        
+
+
+
+      </ul>
+      
+      </div>
+
+      <button type="button" class="slider-nav" aria-label="Go left"></button>
+      <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+    </div>
+
+
+
+
+
+
+    <div class="all_product pt-3  text-center  p-5">
+      <h1 class="p-3">AUTHORIZED DISTRIBUTOR</h1>
+      <div class="images">
+        <img class="px-3" src="./image/gloriois-3.webp" alt="">
+        <img class="px-3" src="./image/idm.png" alt="">
+        <img class="px-3" src="./image/tecware-logo.png" alt="">
+        <img class="px-3" src="./image/keychron-logo.png" alt="">
+        <img class="px-3" src="./image/bajeal-logo.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer  text-light py-5 ">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-3 fw-bold">
+          <h5 class=" font-weight-bold">Help</h5>
+          <ul class="list-unstyled mt-3">
+            <li><a href="/" class="text-light text-decoration-none">About Us</a></li>
+            <li><a href="/shop" class="text-light text-decoration-none">Terms and conditons</a></li>
+            <li><a href="/about" class="text-light text-decoration-none">Return and Refund</a></li>
+            <li><a href="/contact" class="text-light text-decoration-none">Contact Us</a></li>
+            <li><a href="/signup" class="text-light text-decoration-none">Privacy and policy</a></li>
+
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-3 fw-bold">
+          <h5 class=" font-weight-bold">Quick Links</h5>
+          <ul class="list-unstyled mt-3">
+            <li><a href="/" class="text-light text-decoration-none">Home</a></li>
+            <li><a href="/shop" class="text-light text-decoration-none">Shop</a></li>
+            <li><a href="/about" class="text-light text-decoration-none">About Us</a></li>
+            <li><a href="/contact" class="text-light text-decoration-none">Contact Us</a></li>
+            <li><a href="/signup" class="text-light text-decoration-none">Sign Up</a></li>
+            <li><a href="/login" class="text-light text-decoration-none">Login</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-3 fw-bold">
+          <h5 class=" font-weight-bold">Contact Us</h5>
+          <p class="mt-3"><i class="bi bi-geo-alt"></i> 123 Zen Street,Shopping City</p>
+          <p><i class="bi bi-envelope"></i> support@shopzen.com</p>
+          <p><i class="bi bi-telephone"></i> +1 234 567 890</p>
+          <div class="social-icons d-flex gap-3">
+            <a href="https://www.facebook.com/shopzen" class="text-light"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com/shopzen" class="text-light"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.instagram.com/shopzen/" class="text-light"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/shopzen/" class="text-light" target="_blank"><i
+                class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- Logo and About Section -->
+        <div class="col-md-3">
+          <h5 class=" font-weight-bold fw-bold">Pay with SSLCommerz</h5>
+          <img id="shop_img p-5 " class="rounded mt-3" src="image/SSL-Commerz-Pay.jpg" alt="Logo"
+            style="height: 150px;">
+
+        </div>
+      </div>
+      <!-- Footer Bottom -->
+      <div class="row mt-3">
+        <div class="col text-center fw-bold">
+          <p class="mb-0">&copy; 2025 ShopZen Co., Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="./static/js/admin.js"></script>
+  <script src="./static/js/app.js"></script>
+  <script src="./static/js/auth.js"></script>
+  <script src="./static/js/navbar.js"></script>
+  <script src="./static/js/cart.js"></script>
+
+
+  <script src="./static/js/home.js"></script>
+  <script src="./static/js/contact_us.js"></script>
+  <script src="./static/js/booking.js"></script>
+  <script src="./static/js/hotel_view.js"></script>
+  <script src="./static/js/user_profile.js"></script>
+  <script src="./static/js/service.js"></script>
+
+
+  <script src="./static/js/admin_hotel.js"></script>
+  <script src="./static/js/admin_contact.js"></script>
+  <script src="./static/js/admin_distirct.js"></script>
+  <script src="./static/js/admin_review.js"></script>
+  <script src="./static/js/admin_user.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+    defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
