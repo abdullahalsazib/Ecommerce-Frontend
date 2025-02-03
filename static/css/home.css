@@ -1,7 +1,62 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+   }
 .navbar{
     background-color: rgba(12, 12, 199, 0.911) ;
     font-size: 0.875rem;
 }
+
+/* 
+.bannar-img {  
+    height: 70vh;  
+    width: 100%;  
+    object-fit: cover; 
+} */
+.bannar-img {  
+    height: 70vh;  
+    width: 100%;  
+    background-size: cover;  
+    background-position: center;  
+}
+
+
+.main-all-content{
+    padding-inline: 15%;
+    padding-block: 50px;
+    margin-top: 15px;
+}
+.deals-img {  
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
+}
+.deals-img {  
+    width: 100%;  ; /* Adjust as needed */  
+    background-image: url('.deals-img'); /* Set your image */  
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
+}
+
+
+.Furycube{
+    height: 100px;
+}
+
+
+
+
+
+.text-shadow {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Adds a bold shadow effect */
+}
+
+
 
 .container1{
     height: 300px;

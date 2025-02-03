@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,133 +22,95 @@
 
 <body class="bg-light">
 
-  <nav class="navbar navbar-expand-lg text-light  py-3">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center px-5" href="#">
-        <!-- <img id="shop_img" class="rounded" src="image/vibe.png" alt="Logo" style="height: 30px;"> -->
-        <a href="home.html" class="text-decoration-none text-light">
-          <h1 class="logo fs-3 fw-bold ms-2 mb-0">SHOPZEN</h1>
-        </a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid col-8">
+      <a href="home.html" class="navbar-brand text-light  fw-bold fs-3">
+        SHOPZEN
       </a>
-    </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon bg-light"><a href="cart.html"></a></span>
-    </button>
+      <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse col-md-8" id="navbarNav">
-      <ul class="navbar-nav ms-auto" id="navbarElement">
-        <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="home.html">HOME</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="service.html">SHOPE</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="booking.html">ABOUT US</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="contact.html">CONTACT</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="registration.html">SIGN UP</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold px-3 mx-3" href="login.html">LOGIN</a></li>
-      </ul>
-    </div>
+      <div class="collapse navbar-collapse justify-content-between col-4 " id="navbarNav">
+        <ul class="navbar-nav mx-auto align-items-center" id="navbarElement">
 
+        </ul>
+        <a href="./cart.html">
+          <img src="./image/cart_img.jpg" alt="Cart" class="ms-3" style="height: 40px;">
+        </a>
+
+      </div>
     </div>
   </nav>
-    <main>
-        <div class="login-container d-flex flex-wrap align-items-center justify-content-center min-vh-100 bg-light">
-          <!-- Registration Image Section -->
-          <div class="col-lg-6 col-md-6 col-sm-12 text-center mt-5">
-            <img class="img-fluid w-75 rounded" src="./Image/register.jpg" alt="Hotel Registration" />
-          </div>
-      
-          <!-- Registration Form Section -->
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <h1 class="title mt-3 text-center fw-bold fs-2 m-5">Create a new account</h1>
-            <div class="card shadow p-4">
-              <form action="" onsubmit="handleRegistration(event)">
-                <!-- Error Message -->
-                <p id="error" class="text-danger"></p>
-      
-                <!-- Username -->
-                <div class="mb-3">
-                  <input
-                    id="username"
-                    type="text"
-                    class="form-control"
-                    placeholder="Username"
-                    required
-                  />
-                </div>
-      
-                <!-- First Name -->
-                <div class="mb-3">
-                  <input
-                    id="first_name"
-                    type="text"
-                    class="form-control"
-                    placeholder="First Name"
-                    required
-                  />
-                </div>
-      
-                <!-- Last Name -->
-                <div class="mb-3">
-                  <input
-                    id="last_name"
-                    type="text"
-                    class="form-control"
-                    placeholder="Last Name"
-                    required
-                  />
-                </div>
-      
-                <!-- Email -->
-                <div class="mb-3">
-                  <input
-                    id="email"
-                    type="email"
-                    class="form-control"
-                    placeholder="Email"
-                    required
-                  />
-                </div>
-      
-                <!-- Password -->
-                <div class="mb-3">
-                  <input
-                    id="password"
-                    type="password"
-                    class="form-control"
-                    placeholder="Password"
-                    required
-                  />
-                </div>
-      
-                <!-- Confirm Password -->
-                <div class="mb-3">
-                  <input
-                    id="confirm_password"
-                    type="password"
-                    class="form-control"
-                    placeholder="Confirm Password"
-                    required
-                  />
-                </div>
-      
-                <!-- Submit Button -->
-                <div class="text-center">
-                  <input type="submit" class="btn btn-primary w-100 text-white" value="Register" />
-                </div>
-      
-                <!-- Link to Login -->
-                <div class="text-center mt-3">
-                  <p>
-                    <a class="text-decoration-none text-primary" href="login.html">
-                      Go to Login Page
-                    </a>
-                  </p>
-                </div>
-              </form>
+
+
+  <main>
+    <div class="login-container d-flex flex-wrap align-items-center justify-content-center min-vh-100 bg-light">
+      <!-- Registration Image Section -->
+       
+      <!-- <div class="col-lg-6 col-md-6 col-sm-12 text-center mt-5">
+        <img class="img-fluid w-75 rounded" src="./Image/register.jpg" alt="Hotel Registration" />
+      </div> -->
+
+      <!-- Registration Form Section -->
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h1 class="title mt-3 text-center fw-bold fs-2 m-5">Create a new account</h1>
+        <div class="card shadow p-4">
+          <form action="" onsubmit="handleRegistration(event)">
+            <!-- Error Message -->
+            <p id="error" class="text-danger"></p>
+
+            <!-- Username -->
+            <div class="mb-3">
+              <input id="username" type="text" class="form-control" placeholder="Username" required />
             </div>
-          </div>
+
+            <!-- First Name -->
+            <div class="mb-3">
+              <input id="first_name" type="text" class="form-control" placeholder="First Name" required />
+            </div>
+
+            <!-- Last Name -->
+            <div class="mb-3">
+              <input id="last_name" type="text" class="form-control" placeholder="Last Name" required />
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <input id="email" type="email" class="form-control" placeholder="Email" required />
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <input id="password" type="password" class="form-control" placeholder="Password" required />
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-3">
+              <input id="confirm_password" type="password" class="form-control" placeholder="Confirm Password"
+                required />
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+              <input type="submit" class="btn btn-primary w-100 text-white" value="Register" />
+            </div>
+
+            <!-- Link to Login -->
+            <div class="text-center mt-3">
+              <p>
+                <a class="text-decoration-none text-primary" href="login.html">
+                  Go to Login Page
+                </a>
+              </p>
+            </div>
+          </form>
         </div>
-      </main>
-      
+      </div>
+    </div>
+  </main>
+
 
   <!-- Footer -->
   <footer class="footer  text-light py-5 ">
@@ -241,9 +203,3 @@
 </body>
 
 </html>
-
-
-
-
-
-

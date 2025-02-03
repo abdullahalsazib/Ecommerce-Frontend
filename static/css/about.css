@@ -1,0 +1,16 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+   }
+  .nav-item a:hover{
+      background: #a9abac;
+  }
+  .main-container{
+    padding-inline:20%;
+    padding-block: 50px;
+    margin-top: 20px;
+
+  }
