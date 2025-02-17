@@ -1,15 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cartTableBody = document.getElementById("cartTableBody");
-  const cartTotalElement = document.getElementById("cartTotal");
+  const cartTotal = document.getElementById("cartTotal");
   const checkoutButton = document.getElementById("checkoutButton");
 
   const loadCart = () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    // console.log("This is cart home cart");
+    console.log("ATOOJABT", cart);
+
     displayCart(cart);
   };
 
   const displayCart = (cart) => {
     cartTableBody.innerHTML = "";
+    // console.log("that is  card details form click the detles");
     let total = 0;
 
     if (cart.length === 0) {
@@ -18,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <td colspan="5" class="text-center">Your cart is empty.</td>
         </tr>
       `;
-      cartTotalElement.textContent = "0 TK";
+      cartTotal.textContent = "0 TK";
       return;
     }
 
@@ -30,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       row.innerHTML = `
         <td> 
           <div class="d-flex align-items-center">
-            <img src="${product.image}" alt="${product.name}" class="img-fluid" style="height: 80px; width: auto;">
+
             <span class="ms-3">${product.name}</span>
           </div>
         </td>
@@ -48,7 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
       cartTableBody.appendChild(row);
     });
 
-    cartTotalElement.textContent = `${total} TK`;
+    cartTotal.textContent = `${total} TK`;
+
     attachCartListeners();
   };
 
@@ -88,6 +93,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  if (checkoutButton) {
+    checkoutButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      if (cart.length === 0) {
+        alert(
+          "Your cart is empty. Add some products before proceeding to checkout."
+        );
+      } else {
+        window.location.href = "checkout.html";
+      }
+    });
+  }
+
   const updateCartQuantity = (productId, change) => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let product = cart.find((item) => item.id === productId);
@@ -122,18 +141,16 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   loadCart();
-
-  if (checkoutButton) {
-    checkoutButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      if (cart.length === 0) {
-        alert(
-          "Your cart is empty. Add some products before proceeding to checkout."
-        );
-      } else {
-        window.location.href = "checkout.html";
-      }
-    });
-  }
 });
+
+
+
+
+// const removeCart = () => {
+//   localStorage.removeItem("cart");
+//   console.log("🔹 কার্ট মুছে ফেলা হয়েছে");
+// };
+
+// removeCart();
+
+

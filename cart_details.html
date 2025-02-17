@@ -35,12 +35,37 @@
       <div class="collapse navbar-collapse justify-content-between col-4 " id="navbarNav">
         <ul class="navbar-nav mx-auto align-items-center" id="navbarElement">
 
-        </ul>
-        <a href="./cart.html">
-          <img src="./image/cart_img.jpg" alt="Cart" class="ms-3" style="height: 40px;">
+        </ul> 
+        <a href="./cart.html"  class="text-white h5 ">
+          <i class="fa-solid fa-cart-shopping"></i>
         </a>
 
       </div>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid col-8">
+      <div class="col-lg-3 col-md-6 col-sm-8 dropdown">
+        <button class="btn text-light fw-bold text-start dropdown-toggle" data-bs-toggle="dropdown">
+          All Categories
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Monitor</a></li>
+          <li><a class="dropdown-item" href="#">Keyboard</a></li>
+          <li><a class="dropdown-item" href="#">Headphone</a></li>
+        </ul>
+      </div>
+      
+     <div class="col-lg-7 col-md-12 col-sm-12 text-center p-1">
+      <form class="d-flex justify-content-center">
+        <input class="form-control w-100 me-2" type="search" placeholder="Search for product" aria-label="Search">
+        <button class="btn btn-light">search</button>
+      </form>
+    </div>
+    <div class="col-lg-2 col-md-12 col-sm-12 p-2">
+      <h6 class="text-end text-light m-0"><i class="fa-solid fa-mobile "></i>+01765034196</h6>
+    </div>
     </div>
   </nav>
 
@@ -48,27 +73,31 @@
 
   <main>
     <div class="main-container">
-    
+
       <div id="product-details" class="container ">
-   
-        
+
+
       </div>
 
       <div class="review-container pt-5">
-        <div class="card bg-info p-5 ">
+        <div class="card p-5  shadow">
           <h2 class="text-center mb-4">Add a Review</h2>
+
           <form id="reviewForm" method="POST">
+            <div class="mb-3">
+              <label for="email" class="form-label text-black fw-bold fs-5">Email:</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required>
+            </div>
 
             <div class="mb-3">
               <label for="review_body" class="form-label text-black fw-bold fs-5">Review:</label>
-              <textarea class="form-control" name="review_body" id="review_body" rows="4"
-                placeholder="Write your review here..." required></textarea>
+              <textarea class="form-control" name="body" id="body" rows="4" placeholder="Write your review here..."
+                required></textarea>
             </div>
-
 
             <div class="mb-3">
               <label for="rating" class="form-label text-black fw-bold fs-5">Select Rating:</label>
-              <select class="form-select" id="rating_body" required>
+              <select class="form-select" name="star" id="star" required>
                 <option value="5">⭐⭐⭐⭐⭐</option>
                 <option value="4">⭐⭐⭐⭐</option>
                 <option value="3">⭐⭐⭐</option>
@@ -76,10 +105,12 @@
                 <option value="1">⭐</option>
               </select>
             </div>
+
             <div class="text-center">
-              <button onclick="hotelReview(event)" type="button" class="btn btn-primary">Review</button>
+              <button onclick="productReview(event)" type="button" class="btn btn-primary">Submit Review</button>
             </div>
           </form>
+
         </div>
 
       </div>
@@ -125,9 +156,11 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="static/js/contact_us.js"></script>
+  <script src="static/js/auth.js"></script>
   <script src="static/js/navbar.js"></script>
   <script src="static/js/cart_details.js"></script>
   <script src="static/js/cart.js"></script>
 
 </body>
+
 </html>

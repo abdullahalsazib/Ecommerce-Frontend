@@ -1,5 +1,4 @@
 
-
 *{
     margin: 0;
     padding: 0;
@@ -7,16 +6,11 @@
     font-family: 'Raleway', sans-serif;
    }
 .navbar{
-    background-color: rgba(12, 12, 199, 0.911) ;
+    background-color: rgba(2, 2, 173, 0.911) ;
     font-size: 0.875rem;
 }
 
-/* 
-.bannar-img {  
-    height: 70vh;  
-    width: 100%;  
-    object-fit: cover; 
-} */
+
 .bannar-img {  
     height: 70vh;  
     width: 100%;  
@@ -28,7 +22,7 @@
 .main-all-content{
     padding-inline: 15%;
     padding-block: 50px;
-    margin-top: 15px;
+
 }
 .deals-img {  
     background-size: cover;  
@@ -47,9 +41,6 @@
 .Furycube{
     height: 100px;
 }
-
-
-
 
 
 .text-shadow {

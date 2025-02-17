@@ -13,15 +13,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.all.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.min.css" rel="stylesheet">
-
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 
 </head>
-
 </head>
 
 <body class="bg-light">
@@ -40,36 +37,151 @@
         <ul class="navbar-nav mx-auto align-items-center" id="navbarElement">
 
         </ul>
-        <a href="./cart.html">
-          <img src="./image/cart_img.jpg" alt="Cart" class="ms-3" style="height: 40px;">
+        <a href="./cart.html"  class="text-white h5 ">
+          <i class="fa-solid fa-cart-shopping"></i>
         </a>
 
       </div>
     </div>
   </nav>
 
-  
-  
-  <div class="All col-12 p-5 d-flex">
-    <div class="container my-5">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h3 class="card-title">Cart Total</h3>
-              <div class="d-flex justify-content-between border-bottom py-2">
-                <span>Total Price</span>
-                <strong id="cartTotal">0 TK</strong>
-              </div>
-              <button class="btn btn-info w-100 mt-4" id="checkoutButton"><a href="home.html">Prosecd To chek out</output></a></button>
-            </div>
-          </div>
-        </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid col-8">
+      <div class="col-lg-3 col-md-6 col-sm-8 dropdown">
+        <button class="btn text-light fw-bold text-start dropdown-toggle" data-bs-toggle="dropdown">
+          All Categories
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Monitor</a></li>
+          <li><a class="dropdown-item" href="#">Keyboard</a></li>
+          <li><a class="dropdown-item" href="#">Headphone</a></li>
+        </ul>
       </div>
+      
+     <div class="col-lg-7 col-md-12 col-sm-12 text-center p-1">
+      <form class="d-flex justify-content-center">
+        <input class="form-control w-100 me-2" type="search" placeholder="Search for product" aria-label="Search">
+        <button class="btn btn-light">search</button>
+      </form>
     </div>
-  </div>
+    <div class="col-lg-2 col-md-12 col-sm-12 p-2">
+      <h6 class="text-end text-light m-0"><i class="fa-solid fa-mobile "></i>+01765034196</h6>
+    </div>
+    </div>
+  </nav>
 
 
+
+
+<main>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <!-- Form Section -->
+            <div class="col-md-8 col-lg-7 p-2">
+                <div class="card shadow-sm p-4">
+                    <h4 class="text-center mb-3">Checkout Form</h4>
+                    <form id="checkoutForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="zip" class="form-label">Zip Code</label>
+                            <input type="text" class="form-control" id="zip" placeholder="Enter zip code" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" required></textarea>
+                        </div>
+                        <button class="btn btn-info w-100 mt-3" onclick="payButton()">Make Payment</button>
+    
+                    </form>
+                </div>
+            </div>
+
+            <!-- Cart Section -->
+            <div class="col-md-6 col-lg-5 p-4">
+                <div class="card shadow-sm p-4">
+                    <h4 class="text-center mb-3">Cart Summary</h4>
+                    <div class="d-flex justify-content-between border-bottom pb-2">
+                        <span>Total Price</span>
+                        <strong id="cartTotal">0 TK</strong>
+                    </div>
+          
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Table Section -->
+        <div class="row mt-4">
+            <div class="col-lg-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total amount</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartTableBody">
+                                <!-- Items will be added dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Shopping Cart</h2>
+
+      <div class="d-flex justify-content-end">
+        <p id="total-amount" class="fs-4 fw-bold text-primary">Total: $0</p>
+    </div>
+  
+      <div class="table-responsive">
+          <table class="table table-bordered table-striped text-center">
+              <thead class="table-dark">
+                  <tr>
+                      <th>Product Name</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                  </tr>
+              </thead>
+              <tbody id="cart-body"></tbody>
+          </table>
+      </div>
+
+
+
+
+
+
+
+
+
+
+</main>
+
+
+   
 
   <footer class="footer  text-light py-5 ">
     <div class="container">
@@ -137,19 +249,15 @@
   <script src="./static/js/checkout.js"></script>
   <script src="./static/js/home.js"></script>
   <script src="./static/js/contact_us.js"></script>
-  <script src="./static/js/booking.js"></script>
-  <script src="./static/js/hotel_view.js"></script>
   <script src="./static/js/user_profile.js"></script>
   <script src="./static/js/service.js"></script>
-  <script src="./static/js/admin_hotel.js"></script>
-  <script src="./static/js/admin_contact.js"></script>
-  <script src="./static/js/admin_distirct.js"></script>
-  <script src="./static/js/admin_review.js"></script>
-  <script src="./static/js/admin_user.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
     defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+
 </body>
+
 </html>

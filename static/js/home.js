@@ -1,47 +1,62 @@
-
-const baseURL = "https://ecommerce-backend-8o3w.onrender.com/product/";
+const baseURL = "http://127.0.0.1:8000/product/";
 const user_id = localStorage.getItem("user_id");
 
-console.log(user_id); 
-const productLoad = () => {
-  fetch(baseURL)
+console.log(user_id);
+
+const productLoad = (search) => {
+  console.log("Search Query:", search);
+  const url =
+    search && search.trim() !== ""
+      ? `${baseURL}?brand=${search}`
+      : `${baseURL}`;
+  console.log(url);
+  fetch(url)
     .then((res) => res.json())
-    .then((data) => displayProduct(data))
-    .catch((error) => console.error("Error fetching data:", error));
+    .then((data) => displayProduct(data));
 };
 
-
 const displayProduct = (products) => {
-  console.log(products);
+  // console.log("Fetched Products:", products);
   const parent = document.getElementById("slider-container");
-  parent.innerHTML = ""; 
+  parent.innerHTML = "";
+
+  if (!products || products.length === 0) {
+    parent.innerHTML =
+      '<h2 class="text-center text-danger fw-bold mt-4">Product Not Found.</h2>';
+    return;
+  }
 
   products.forEach((product) => {
     const li = document.createElement("li");
-    const imageUrl = product.image.startsWith("http") ? product.image : `${baseURL}${product.image}`;
+    const imageUrl = product.image.startsWith("http")
+      ? product.image
+      : `${baseURL}${product.image}`;
 
     const descriptionText = (product.description || "").trim();
-    const descriptionWords = descriptionText.split(/\s+/).slice(0, 5).join(" ") + "...";
+    const descriptionWords =
+      descriptionText.split(/\s+/).slice(0, 5).join(" ") + "...";
 
     li.innerHTML = `
-
-  <div class="card border-0 shadow-lg rounded-1 overflow-hidden bg-white">
-  <div class="position-relative">
-    <img src="${imageUrl}" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
+    <div class="card border-0 rounded-1 overflow-hidden bg-light">
+    <div class="position-relative">
+    <img src="${imageUrl}" class="card-img-top img-fluid w-100 " style="height: 250px; object-fit: cover;" loading="lazy" alt="${product.name}">
     <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock: ${product.stock}</span>
-  </div>
-  
+    </div>
+    </div>
+
   <div class="card-body d-flex flex-column p-4">
     <h5 class="card-title text-dark fw-bold">${product.name}</h5>
     <p class="card-text text-muted small flex-grow-1">${descriptionWords}</p>
     <h6 class="text-primary fw-bold">Price: $${product.price}</h6>
+     <h6 class="text-black fw-bold">${product.brand}</h6>
 
     <div class="d-flex justify-content-between mt-3">
 
        <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i class="fas fa-info-circle"></i> Details</a>
       
     <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-    <i class="fas fa-shopping-cart"></i> Add To Cart
+    <i class="fas fa-shopping-cart"></i> 
+    Add To Cart
      </button>
 
   </div>
@@ -51,7 +66,6 @@ const displayProduct = (products) => {
     parent.appendChild(li);
   });
 
-  // Attach event listeners to "Add to Cart" buttons
   document.querySelectorAll(".add-to-cart").forEach((button) => {
     button.addEventListener("click", (event) => {
       const product = {
@@ -59,14 +73,12 @@ const displayProduct = (products) => {
         name: event.target.dataset.name,
         price: parseFloat(event.target.dataset.price),
         stock: parseInt(event.target.dataset.stock),
-        quantity: 1, // Default quantity
+        quantity: 1,
       };
       addToCart(product);
     });
   });
 };
-
-// Add product to cart
 
 const addToCart = (product) => {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -86,14 +98,207 @@ const addToCart = (product) => {
   alert(`${product.name} added to cart!`);
 };
 
+
+
+
+
+
+
+
+const keybordURL = "http://127.0.0.1:8000/keybord/";
+
+const keybordLoad = (search = "") => {
+  console.log("Search Query:", search);
+  const url =
+    search.trim() !== "" ? `${keybordURL}?brand=${search}` : keybordURL;
+  console.log("Fetching from:", url);
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => displayKeybord(data))
+    .catch((error) => console.error("Error fetching keyboards:", error));
+};
+
+const displayKeybord = (keybords) => {
+  console.log("Fetched Products:", keybords);
+  const parent = document.getElementById("slider-container-keybord");
+  parent.innerHTML = "";
+
+  if (!keybords || keybords.length === 0) {
+    parent.innerHTML =
+      '<h2 class="text-center text-danger fw-bold mt-4">Keyboard Not Found.</h2>';
+    return;
+  }
+
+  keybords.forEach((keybord) => {
+    const li = document.createElement("li");
+    const imageUrl = keybord.image.startsWith("http")
+      ? keybord.image
+      : `${keybordURL}${keybord.image}`;
+
+    const descriptionText = (keybord.description || "").trim();
+    const descriptionWords =
+      descriptionText.split(/\s+/).slice(0, 5).join(" ") + "...";
+
+    li.innerHTML = `
+      <div class="card border-0 rounded-1 overflow-hidden bg-light">
+        <div class="position-relative">
+          <img src="${imageUrl}" class="card-img-top img-fluid w-100" style="height: 250px; object-fit: cover;" loading="lazy" alt="${keybord.name}">
+          <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock: ${keybord.stock}</span>
+        </div>
+        <div class="card-body d-flex flex-column p-4">
+          <h5 class="card-title text-dark fw-bold">${keybord.name}</h5>
+          <p class="card-text text-muted small flex-grow-1">${descriptionWords}</p>
+          <h6 class="text-primary fw-bold">Price: $${keybord.price}</h6>
+          <h6 class="text-black fw-bold">${keybord.brand}</h6>
+
+          <div class="d-flex justify-content-between mt-3">
+            <a href="cart_details.html?product_id=${keybord.id}" class="btn btn-outline-primary me-2">
+              <i class="fas fa-info-circle"></i> Details
+            </a>
+            <button class="btn btn-primary btn-sm w-50 add-to-cart" 
+              data-id="${keybord.id}" 
+              data-name="${keybord.name}" 
+              data-price="${keybord.price}" 
+              data-stock="${keybord.stock}">
+              <i class="fas fa-shopping-cart"></i> Add To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+    parent.appendChild(li);
+  });
+
+  // Add event listeners to "Add to Cart" buttons
+  document.querySelectorAll(".add-to-cart").forEach((button) => {
+    button.addEventListener("click", function () {
+      const keybordId = this.dataset.id;
+      const keybordName = this.dataset.name;
+      const keybordPrice = this.dataset.price;
+
+      addToCart(keybordId, keybordName, keybordPrice);
+    });
+  });
+};
+
+
+
+
+
+const headphoneURL = "http://127.0.0.1:8000/headphone/";
+
+const HeadphoneLoad = (search = "") => {
+  console.log("Search Query:", search);
+  const url =
+    search.trim() !== "" ? `${headphoneURL}?brand=${search}` : headphoneURL;
+  console.log("Fetching from:", url);
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => displayHeadphone(data))
+    .catch((error) => console.error("Error fetching keyboards:", error));
+};
+
+const displayHeadphone = (headphones) => {
+  console.log("Fetched Products:", headphones);
+  const parent = document.getElementById("slider-container-headphone");
+  parent.innerHTML = "";
+
+  if (!headphones || headphones.length === 0) {
+    parent.innerHTML =
+      '<h2 class="text-center text-danger fw-bold mt-4">Keyboard Not Found.</h2>';
+    return;
+  }
+
+  headphones.forEach((headphone) => {
+    const li = document.createElement("li");
+    const imageUrl = headphone.image.startsWith("http")
+      ? headphone.image
+      : `${headphoneURL}${headphone.image}`;
+
+    const descriptionText = (headphone.description || "").trim();
+    const descriptionWords =
+      descriptionText.split(/\s+/).slice(0, 5).join(" ") + "...";
+
+    li.innerHTML = `
+      <div class="card border-0 rounded-1 overflow-hidden bg-light">
+        <div class="position-relative">
+          <img src="${imageUrl}" class="card-img-top img-fluid w-100" style="height: 250px; object-fit: cover;" loading="lazy" alt="${headphone.name}">
+          <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock: ${headphone.stock}</span>
+        </div>
+        <div class="card-body d-flex flex-column p-4">
+          <h5 class="card-title text-dark fw-bold">${headphone.name}</h5>
+          <p class="card-text text-muted small flex-grow-1">${descriptionWords}</p>
+          <h6 class="text-primary fw-bold">Price: $${headphone.price}</h6>
+          <h6 class="text-black fw-bold">${headphone.brand}</h6>
+
+          <div class="d-flex justify-content-between mt-3">
+            <a href="cart_details.html?product_id=${headphone.id}" class="btn btn-outline-primary me-2">
+              <i class="fas fa-info-circle"></i> Details
+            </a>
+            <button class="btn btn-primary btn-sm w-50 add-to-cart" 
+              data-id="${headphone.id}" 
+              data-name="${headphone.name}" 
+              data-price="${headphone.price}" 
+              data-stock="${headphone.stock}">
+              <i class="fas fa-shopping-cart"></i> Add To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+    parent.appendChild(li);
+  });
+
+  // Add event listeners to "Add to Cart" buttons
+  document.querySelectorAll(".add-to-cart").forEach((button) => {
+    button.addEventListener("click", function () {
+      const productId = this.dataset.id;
+      const productName = this.dataset.name;
+      const productPrice = this.dataset.price;
+
+      addToCart(productId, productName, productPrice);
+    });
+  });
+};
+
+
+
+
+const loadBrand = () => {
+  fetch("http://127.0.0.1:8000/Brand/")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Fetched brands:", data);
+
+      const parent = document.getElementById("brand");
+      parent.innerHTML = `<option value="">Brand</option>`;
+
+      data.forEach((item) => {
+        const option = document.createElement("option");
+        option.value = item.id;
+        option.textContent = item.name;
+        parent.appendChild(option);
+      });
+
+      parent.addEventListener("change", (event) => {
+        const selectedBrand = event.target.value;
+
+        if (typeof productLoad === "function") {
+          productLoad(selectedBrand || "");
+        } else {
+          console.warn("productLoad function is not defined.");
+        }
+      });
+    })
+    .catch((error) => console.error("Error loading brands:", error));
+};
+
+loadBrand();
+
 productLoad();
 
+keybordLoad();
 
-
-
-
-
-
-
-
-
+HeadphoneLoad();

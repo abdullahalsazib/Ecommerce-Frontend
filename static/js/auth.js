@@ -1,5 +1,4 @@
 
-
 const handleRegistration = (event) => {
     event.preventDefault();
     const username = getValue("username").value;
@@ -26,7 +25,7 @@ const handleRegistration = (event) => {
       )
        {
   
-        fetch("https://ecommerce-backend-8o3w.onrender.com/account/register/", {
+        fetch("http://127.0.0.1:8000/account/register/", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(info),
@@ -78,7 +77,7 @@ const handleRegistration = (event) => {
     console.log(username,password);
     
     if((username,password)){
-      fetch("https://ecommerce-backend-8o3w.onrender.com/account/login/",{
+      fetch("http://127.0.0.1:8000/account/login/",{
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ username, password }),
@@ -113,9 +112,8 @@ const handleRegistration = (event) => {
   }
   const getValue = (id) => {
     const value=document.getElementById(id);
-    return value; // Trim to remove extra spaces
+    return value;
   };
-
 
 const showModal = (modalId, message) => {
     const modal = new bootstrap.Modal(document.getElementById(modalId));
@@ -133,7 +131,7 @@ const handleLogout = (event) => {
     console.log("Logging out...");
     const token = localStorage.getItem("token");
     console.log(token);
-    fetch("https://ecommerce-backend-8o3w.onrender.com/account/logout/", {
+    fetch("http://127.0.0.1:8000/account/logout/", {
       method: "GET",
       headers: {
         Authorization: `Token ${token}`,

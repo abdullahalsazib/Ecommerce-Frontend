@@ -37,124 +37,72 @@
         <ul class="navbar-nav mx-auto align-items-center" id="navbarElement">
 
         </ul>
-        <a href="./cart.html">
-          <img src="./image/cart_img.jpg" alt="Cart" class="ms-3" style="height: 40px;">
+        <a href="./cart.html"  class="text-white h5 ">
+          <i class="fa-solid fa-cart-shopping"></i>
         </a>
-
       </div>
     </div>
   </nav>
 
 
 
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid col-8">
+      <div class="col-lg-3 col-md-6 col-sm-8 dropdown">
+        <button class="btn text-light fw-bold text-start dropdown-toggle" data-bs-toggle="dropdown">
+          All Categories
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Monitor</a></li>
+          <li><a class="dropdown-item" href="#">Keyboard</a></li>
+          <li><a class="dropdown-item" href="#">Headphone</a></li>
+        </ul>
+      </div>
+      
+     <div class="col-lg-7 col-md-12 col-sm-12 text-center p-1">
+      <form class="d-flex justify-content-center">
+        <input class="form-control w-100 me-2" type="search" placeholder="Search for product" aria-label="Search">
+        <button class="btn btn-light">search</button>
+      </form>
+    </div>
+    <div class="col-lg-2 col-md-12 col-sm-12 p-2">
+      <h6 class="text-end text-light m-0"><i class="fa-solid fa-mobile "></i>+01765034196</h6>
+    </div>
+    </div>
+  </nav>
+
+
+
   <main>
-    
-    <div class="title fs-3 bg-primary d-flex p-2 my-3">
-      <h3 class="text-light fw-bold fst-italic text-shadow">DAILY DEALS</h3>
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Shopping Cart</h2>
+
+      <div class="d-flex justify-content-end">
+        <p id="total-amount" class="fs-4 fw-bold text-primary">Total: $0</p>
     </div>
-
-
-    <div class="swiffy-slider slider-item-show4 slider-nav-round slider-nav-page">
-      <ul class="slider-container" id="slider-container">
-
-      </ul>
-
-      <button type="button" class="slider-nav" aria-label="Go left"></button>
-      <button type="button" class="slider-nav slider-nav-next" aria-label="Go right"></button>
-    </div>
-
-
-
+  
+      <div class="table-responsive">
+          <table class="table table-bordered table-striped text-center">
+              <thead class="table-dark">
+                  <tr>
+                      <th>Product Name</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                  </tr>
+              </thead>
+              <tbody id="cart-body"></tbody>
+          </table>
+      </div>
+  
+   
+  </div>
+  
 
 
 
   </main>
 
-
-  <section class="container py-5">
-    <div class="row g-4">
-
-      <!-- Best Prices & Offers -->
-      <div class="col-md-4">
-        <div class="card text-center shadow-lg rounded-4 p-4 border-0">
-          <div class="card-body">
-            <i class="bi bi-tag-fill text-primary display-4 mb-3"></i>
-            <h5 class="fw-bold">Best Prices & Offers</h5>
-            <p class="text-muted">Orders $50 or more</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Free Delivery -->
-      <div class="col-md-4">
-        <div class="card text-center shadow-lg rounded-4 p-4 border-0">
-          <div class="card-body">
-            <i class="bi bi-truck text-danger display-4 mb-3"></i>
-            <h5 class="fw-bold">Free Delivery</h5>
-            <p class="text-muted">24/7 amazing services</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Great Daily Deals -->
-      <div class="col-md-4">
-        <div class="card text-center shadow-lg rounded-4 p-4 border-0">
-          <div class="card-body">
-            <i class="bi bi-gift-fill text-warning display-4 mb-3"></i>
-            <h5 class="fw-bold">Great Daily Deal</h5>
-            <p class="text-muted">When you sign up</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Wide Assortment -->
-      <div class="col-md-4">
-        <div class="card text-center shadow-lg rounded-4 p-4 border-0">
-          <div class="card-body">
-            <i class="bi bi-box-seam text-success display-4 mb-3"></i>
-            <h5 class="fw-bold">Wide Assortment</h5>
-            <p class="text-muted">Mega Discounts</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Easy Returns -->
-      <div class="col-md-4">
-        <div class="card text-center shadow-lg rounded-4 p-4 border-0">
-          <div class="card-body">
-            <i class="bi bi-arrow-return-left text-info display-4 mb-3"></i>
-            <h5 class="fw-bold">Easy Returns</h5>
-            <p class="text-muted">Within 30 days</p>
-          </div>
-        </div>
-      </div>
-
-
-
-      <!-- NEW: Secure Payments -->
-      <div class="col-md-4">
-        <div class="card text-center shadow-lg rounded-4 p-4 border-0">
-          <div class="card-body">
-            <i class="bi bi-shield-lock-fill text-dark display-4 mb-3"></i>
-            <h5 class="fw-bold">Secure Payments</h5>
-            <p class="text-muted">100% Safe and Secure Checkout</p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="content-fotter d-flex  text-center p-5 bg-warning">
-        <div class="quote col-md-6 py-2">
-          <h1>We're ready to collect your package</h1>
-          <p>Uniquely redefine accurate architectures vis-a-vis front-end alignments.</p>
-        </div>
-        <div class="quote col-md-6  text-center py-5">
-          <button class="btn btn-primary ">GET QUOTE</button>
-        </div>
-      </div>
-
-    </div>
-  </section>
 
   <footer class="footer  text-light py-5 ">
     <div class="container">
@@ -164,7 +112,7 @@
           <h5 class=" font-weight-bold">Help</h5>
           <ul class="list-unstyled mt-3">
             <li><a href="/" class="text-light text-decoration-none">About Us</a></li>
-            <li><a href="/shop" class="text-light text-decoration-none">Terms and conditons</a></li>
+            <li><a href="/service" class="text-light text-decoration-none">Terms and conditons</a></li>
             <li><a href="/about" class="text-light text-decoration-none">Return and Refund</a></li>
             <li><a href="/contact" class="text-light text-decoration-none">Contact Us</a></li>
             <li><a href="/signup" class="text-light text-decoration-none">Privacy and policy</a></li>
@@ -219,6 +167,7 @@
   <script src="./static/js/cart.js"></script>
   <script src="./static/js/cart_details.js"></script>
   <script src="./static/js/home.js"></script>
+  <script src="./static/js/order_deatils.js"></script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"

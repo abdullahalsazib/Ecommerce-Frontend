@@ -38,9 +38,11 @@
       <div class="collapse navbar-collapse justify-content-between col-4 " id="navbarNav">
         <ul class="navbar-nav mx-auto align-items-center" id="navbarElement">
 
+
+
         </ul>
-        <a href="./cart.html">
-          <img src="./image/cart_img.jpg" alt="Cart" class="ms-3" style="height: 40px;">
+        <a href="./cart.html" class=" text-white h5">
+          <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
         </a>
 
       </div>
@@ -50,53 +52,40 @@
 
 
 
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid col-8">
 
-
-
-  <div id="carouselExampleCaptions" class="carousel slide">
-    <div class="carousel-inner">
-      <div class="carousel-item active c-item">
-        <img src="image/Product+Showcase-1.jpg" class="bannar-img d-block w-100 c-img" alt="...">
-        <div
-          class="carousel-caption d-flex flex-column align-items-center text-center justify-content-center top-0 mt-5 pt-5 d-none d-md-block">
-          <h1 class="fw-bold display-6 mt-5 pt-5 px-4 r text-white rounded-3">Experience the epitome of luxury</h1>
-          <p class="mt-4 fs-4 px-3 py-2text-white rounded">Escape to nestled in the majestic mountains. Wake up to
-            panoramic views and crisp.</p>
-
-          <div
-            class="main-container  text-center align-items-center justify-content-center bg-scendry rounded-3 pt-4 p-4">
-            <div class="search-container d-flex flex-md-row align-items-center justify-content-center w-75bg-light ">
-              <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3 w-100">
-                <select id="district" class="form-select w-md-auto  border-0" required>
-                  <option value="ssl">All District</option>
-                </select>
-                <input type="text" placeholder="Search Hotel Name" id="search"
-                  class="form-control w-md-auto p-2 border-0">
-                <button type="button" onclick="handleSearch()" class="btn btn-secondary w-100 w-md-auto p-2 border-0">
-                  Search
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
+      <div class="col-lg-3 col-md-12 col-sm-12">
+        <select id="brand" class="form-select brand-select bg-primary text-light" required>
+          <option value="">Brand</option>
+        </select>
       </div>
 
+
+      <div class="col-sm-12 col-md-12 col-lg-7 text-center p-1">
+        <form class="d-flex justify-content-center">
+          <input class="form-control w-100 me-2" type="search" id="search" placeholder="Search for product">
+          <button class="btn btn-light" id="search-btn">Search</button>
+        </form>
+      </div>
+
+      <div class="col-lg-2 col-md-12 col-sm-12 p-2">
+        <h6 class="text-end text-light m-0"><i class="fa-solid fa-mobile "></i>+01765034196</h6>
+      </div>
     </div>
-  </div>
+  </nav>
+
 
 
   <div class="main-all-content bg-light">
 
     <div class="product_container col-12 p-5">
 
-
       <div class="bannar-section d-flex col-12">
-        <div class="big-bannar col-md-12 bg-danger w-100">
-          <img src="./image/laptop-banner.webp" alt="">
+        <div class="big-bannar col-md-12 bg-danger w-100 position-relative">
+          <img src="./image/laptop-banner.webp" alt="" class="w-100 h-100 object-fit-cover">
         </div>
       </div>
-
 
 
 
@@ -144,8 +133,10 @@
       </div>
 
 
-      <div class="swiffy-slider slider-item-show4 slider-nav-round slider-nav-page">
-        <ul class="slider-container" id="slider-container">
+      <div class="swiffy-slider slider-item-show4  slider-nav-round slider-nav-page">
+        <ul class="slider-container " id="slider-container">
+
+
 
         </ul>
 
@@ -157,329 +148,21 @@
 
 
       <div class="monitor-section">
-        <h1 class="fw-bold py-4 pt-5 ">Monitor Deals</h1>
-      </div>
-      <div class="swiffy-slider slider-item-show4 slider-nav-round slider-nav-page">
-        <ul class="slider-container">
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-        </ul>
-
-        <button type="button" class="slider-nav" aria-label="Go left"></button>
-        <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
-      </div>
-
-
-
-
-
-
-
-
-
-
-      <div class="monitor-section">
         <h1 class="fw-bold py-4 pt-5 ">Keyboard Deals</h1>
       </div>
-      <div class="swiffy-slider slider-item-show4 slider-nav-round slider-nav-page">
-        <ul class="slider-container">
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
 
-              <div class="d-flex justify-content-between mt-3">
+      <div class="swiffy-slider slider-item-show4  slider-nav-round slider-nav-page">
+        <ul class="slider-container " id="slider-container-keybord">
 
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
 
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
 
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
         </ul>
 
         <button type="button" class="slider-nav" aria-label="Go left"></button>
-        <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+        <button type="button" class="slider-nav slider-nav-next" aria-label="Go right"></button>
       </div>
+
+
 
 
 
@@ -490,179 +173,18 @@
       <div class="monitor-section">
         <h1 class="fw-bold py-4 pt-5 ">Headphone Deals</h1>
       </div>
-      <div class="swiffy-slider slider-item-show4 slider-nav-round slider-nav-page">
-        <ul class="slider-container">
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
 
-              <div class="d-flex justify-content-between mt-3">
 
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
+      <div class="swiffy-slider slider-item-show4  slider-nav-round slider-nav-page">
+        <ul class="slider-container " id="slider-container-headphone">
 
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
 
-              <div class="d-flex justify-content-between mt-3">
 
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
-          <li class="border border-1">
-            <div class="position-relative">
-              <img src="./image/man_5.jpg" class="card-img-top img-fluid" loading="lazy" alt="${product.name}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock:2</span>
-            </div>
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title text-dark fw-bold">Headphone</h5>
-              <p class="card-text text-muted small flex-grow-1">This is good Headphone</p>
-              <h6 class="text-primary fw-bold">Price:500$</h6>
-
-              <div class="d-flex justify-content-between mt-3">
-
-                <a href="cart_details.html?product_id=${product.id}" class="btn btn-outline-primary me-2"><i
-                    class="fas fa-info-circle"></i> Details</a>
-
-                <button class="btn btn-primary btn-sm w-50 add-to-cart" data-id="${product.id}"
-                  data-name="${product.name}" data-price="${product.price}" data-stock="${product.stock}">
-                  <i class="fas fa-shopping-cart"></i> Add To Cart
-                </button>
-              </div>
-          </li>
         </ul>
 
         <button type="button" class="slider-nav" aria-label="Go left"></button>
-        <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+        <button type="button" class="slider-nav slider-nav-next" aria-label="Go right"></button>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -678,12 +200,6 @@
         </div>
       </div>
     </div>
-
-
-
-
-
-
 
 
 
@@ -757,6 +273,7 @@
   <script src="./static/js/auth.js"></script>
   <script src="./static/js/navbar.js"></script>
   <script src="./static/js/cart.js"></script>
+  <script src="./static/js/home.js"></script>
 
 
   <script src="./static/js/home.js"></script>
@@ -781,6 +298,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.2.0/js/swiffy-slider.min.js" defer></script>
+  <script src="https://kit.fontawesome.com/2dadd974fe.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +21,7 @@
 </head>
 
 <body class="bg-light">
+
   <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid col-8">
       <a href="home.html" class="navbar-brand text-light  fw-bold fs-3">
@@ -34,61 +36,94 @@
         <ul class="navbar-nav mx-auto align-items-center" id="navbarElement">
 
         </ul>
-        <a href="./cart.html">
-          <img src="./image/cart_img.jpg" alt="Cart" class="ms-3" style="height: 40px;">
+        <a href="./cart.html"  class="text-white h5 ">
+          <i class="fa-solid fa-cart-shopping"></i>
         </a>
 
       </div>
     </div>
   </nav>
 
-  
-<main>
-  <div class="All col-12 p-5 d-flex">
-    <div class="container my-5">
-      <div class="row">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid col-8">
+      <div class="col-lg-3 col-md-6 col-sm-8 dropdown">
+        <button class="btn text-light fw-bold text-start dropdown-toggle" data-bs-toggle="dropdown">
+          All Categories
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Monitor</a></li>
+          <li><a class="dropdown-item" href="#">Keyboard</a></li>
+          <li><a class="dropdown-item" href="#">Headphone</a></li>
+        </ul>
+      </div>
+      
+     <div class="col-lg-7 col-md-12 col-sm-12 text-center p-1">
+      <form class="d-flex justify-content-center">
+        <input class="form-control w-100 me-2" type="search" placeholder="Search for product" aria-label="Search">
+        <button class="btn btn-light">search</button>
+      </form>
+    </div>
+    <div class="col-lg-2 col-md-12 col-sm-12 p-2">
+      <h6 class="text-end text-light m-0"><i class="fa-solid fa-mobile "></i>+01765034196</h6>
+    </div>
+    </div>
+  </nav>
 
-        <div class="col-lg-8 mb-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <table class="table align-middle">
-                <thead class="table-light">
-                  <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody id="cartTableBody">
-          
 
-                </tbody>
-              </table>
+
+
+
+  <main>
+    <div class="All col-12 p-5 d-flex">
+      <div class="container my-5">
+        <div class="row">
+
+          <div class="col-lg-8 mb-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <table class="table align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Product</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Subtotal</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="cartTableBody">
+
+
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
-  
-    
-        <div class="col-lg-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h3 class="card-title">Cart Total</h3>
-              <div class="d-flex justify-content-between border-bottom py-2">
-                <span>Total Price</span>
-                <strong id="cartTotal">0 TK</strong>
+
+
+          <div class="col-lg-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title">Cart Total</h3>
+                <div class="d-flex justify-content-between border-bottom py-2">
+                  <span>Total Price</span>
+                  <strong id="cartTotal">0 TK</strong>
+                </div>
+                <button class="btn btn-info w-100 mt-4" onclick="orderDetails()" id="checkoutButton">Make Payment</output></a>
+                </button>
+
               </div>
-              <button class="btn btn-info w-100 mt-4" id="checkoutButton"><a href="{% url 'payment:payment' %}">Prosecd To checkout</output></a></button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
-</main>
-  
+
+
+
+
+  </main>
+
   <footer class="footer  text-light py-5 ">
     <div class="container">
       <div class="row">
@@ -145,6 +180,7 @@
     </div>
   </footer>
   <script src="./static/js/cart.js"></script>
+  <script src="./static/js/cart_details.js"></script>
   <script src="./static/js/app.js"></script>
   <script src="./static/js/auth.js"></script>
   <script src="./static/js/navbar.js"></script>
@@ -154,27 +190,11 @@
   <script src="./static/js/hotel_view.js"></script>
   <script src="./static/js/user_profile.js"></script>
   <script src="./static/js/service.js"></script>
-  <script src="./static/js/admin_hotel.js"></script>
-  <script src="./static/js/admin_contact.js"></script>
-  <script src="./static/js/admin_distirct.js"></script>
-  <script src="./static/js/admin_review.js"></script>
-  <script src="./static/js/admin_user.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
     defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script> 
+    crossorigin="anonymous"></script>
 </body>
 
-</html>
-
-
-
-
-
-
-
-
-
-
-
+</html> 
