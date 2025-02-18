@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const loadCart = () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    // console.log("This is cart home cart");
     console.log("ATOOJABT", cart);
 
     displayCart(cart);
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const displayCart = (cart) => {
     cartTableBody.innerHTML = "";
-    // console.log("that is  card details form click the detles");
     let total = 0;
 
     if (cart.length === 0) {
@@ -146,11 +144,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// const removeCart = () => {
-//   localStorage.removeItem("cart");
-//   console.log("🔹 কার্ট মুছে ফেলা হয়েছে");
+
+
+
+  // const removeCart = () => {
+  //   localStorage.removeItem("cart");
+  //   console.log("🔹 কার্ট মুছে ফেলা হয়েছে");
+  // };
+
+  // removeCart();
+
+
+
+
+
+
+// const postCart = () => {
+//   const cart = JSON.parse(localStorage.getItem("cart")) || [];
+//   let totalAmount = 0;
+
+//   cart.forEach(item => totalAmount += item.price * item.quantity); // calculate total
+
+//   fetch('http://127.0.0.1:8000/cart/', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Authorization': `Bearer ${localStorage.getItem("auth_token")}`,  // Assuming token is stored
+//       'X-CSRFToken': getCookie('csrftoken') // CSRF token for security
+//     },
+//     body: JSON.stringify({
+//       cart: cart.map(item => ({
+//         product_id: item.id,  // Include product ID
+//         quantity: item.quantity
+//       })),
+//       total_amount: totalAmount
+//     })
+//   })
+//   .then(response => response.json())
+//   .then(data => console.log('Cart posted successfully:', data))
+//   .catch(error => console.error('Error posting cart:', error));
 // };
 
-// removeCart();
+// postCart();
+
+
+
+
+
+
+
+
+
 
 

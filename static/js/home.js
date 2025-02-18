@@ -66,19 +66,31 @@ const displayProduct = (products) => {
     parent.appendChild(li);
   });
 
-  document.querySelectorAll(".add-to-cart").forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const product = {
-        id: event.target.dataset.id,
-        name: event.target.dataset.name,
-        price: parseFloat(event.target.dataset.price),
-        stock: parseInt(event.target.dataset.stock),
-        quantity: 1,
-      };
-      addToCart(product);
-    });
+
+document.querySelectorAll(".add-to-cart").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const targetButton = event.target.closest(".add-to-cart"); // Ensure button element
+    if (!targetButton) return;
+
+    const product = {
+      id: targetButton.dataset.id,
+      name: targetButton.dataset.name,
+      price: parseFloat(targetButton.dataset.price),
+      stock: parseInt(targetButton.dataset.stock),
+      quantity: 1,
+    };
+
+    console.log("Adding Product:", product); // Debugging
+
+    if (!product.id || !product.name) {
+      alert("Invalid product data!");
+      return;
+    }
+
+    addToCart(product);
   });
-};
+});
+
 
 const addToCart = (product) => {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -99,10 +111,7 @@ const addToCart = (product) => {
 };
 
 
-
-
-
-
+}
 
 
 const keybordURL = "http://127.0.0.1:8000/keybord/";
@@ -153,7 +162,7 @@ const displayKeybord = (keybords) => {
           <h6 class="text-black fw-bold">${keybord.brand}</h6>
 
           <div class="d-flex justify-content-between mt-3">
-            <a href="cart_details.html?product_id=${keybord.id}" class="btn btn-outline-primary me-2">
+          <a href="/cart.html" class="btn btn-outline-primary me-2">
               <i class="fas fa-info-circle"></i> Details
             </a>
             <button class="btn btn-primary btn-sm w-50 add-to-cart" 
@@ -170,16 +179,29 @@ const displayKeybord = (keybords) => {
     parent.appendChild(li);
   });
 
-  // Add event listeners to "Add to Cart" buttons
-  document.querySelectorAll(".add-to-cart").forEach((button) => {
-    button.addEventListener("click", function () {
-      const keybordId = this.dataset.id;
-      const keybordName = this.dataset.name;
-      const keybordPrice = this.dataset.price;
+  setupEventListeners();
+};
 
-      addToCart(keybordId, keybordName, keybordPrice);
-    });
+
+
+const addToCart = (id, name, price) => {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingProduct = cart.find((item) => item.id === id);
+
+  if (existingProduct) {
+    existingProduct.quantity++;
+  } else {
+    cart.push({ id, name, price, quantity: 1 });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  Swal.fire({
+    icon: "success",
+    title: "Added to Cart",
+    text: `${name} added successfully!`,
   });
+
+  updateCartSummary(); 
 };
 
 
@@ -190,14 +212,13 @@ const headphoneURL = "http://127.0.0.1:8000/headphone/";
 
 const HeadphoneLoad = (search = "") => {
   console.log("Search Query:", search);
-  const url =
-    search.trim() !== "" ? `${headphoneURL}?brand=${search}` : headphoneURL;
+  const url = search.trim() !== "" ? `${headphoneURL}?brand=${search}` : headphoneURL;
   console.log("Fetching from:", url);
 
   fetch(url)
     .then((res) => res.json())
     .then((data) => displayHeadphone(data))
-    .catch((error) => console.error("Error fetching keyboards:", error));
+    .catch((error) => console.error("Error fetching headphones:", error));
 };
 
 const displayHeadphone = (headphones) => {
@@ -206,20 +227,16 @@ const displayHeadphone = (headphones) => {
   parent.innerHTML = "";
 
   if (!headphones || headphones.length === 0) {
-    parent.innerHTML =
-      '<h2 class="text-center text-danger fw-bold mt-4">Keyboard Not Found.</h2>';
+    parent.innerHTML = '<h2 class="text-center text-danger fw-bold mt-4">Headphone Not Found.</h2>';
     return;
   }
 
   headphones.forEach((headphone) => {
     const li = document.createElement("li");
-    const imageUrl = headphone.image.startsWith("http")
-      ? headphone.image
-      : `${headphoneURL}${headphone.image}`;
+    const imageUrl = headphone.image.startsWith("http") ? headphone.image : `${headphoneURL}${headphone.image}`;
 
     const descriptionText = (headphone.description || "").trim();
-    const descriptionWords =
-      descriptionText.split(/\s+/).slice(0, 5).join(" ") + "...";
+    const descriptionWords = descriptionText.split(/\s+/).slice(0, 5).join(" ") + "...";
 
     li.innerHTML = `
       <div class="card border-0 rounded-1 overflow-hidden bg-light">
@@ -232,9 +249,9 @@ const displayHeadphone = (headphones) => {
           <p class="card-text text-muted small flex-grow-1">${descriptionWords}</p>
           <h6 class="text-primary fw-bold">Price: $${headphone.price}</h6>
           <h6 class="text-black fw-bold">${headphone.brand}</h6>
-
+          
           <div class="d-flex justify-content-between mt-3">
-            <a href="cart_details.html?product_id=${headphone.id}" class="btn btn-outline-primary me-2">
+            <a href="/cart.html" class="btn btn-outline-primary me-2 details-btn">
               <i class="fas fa-info-circle"></i> Details
             </a>
             <button class="btn btn-primary btn-sm w-50 add-to-cart" 
@@ -251,18 +268,59 @@ const displayHeadphone = (headphones) => {
     parent.appendChild(li);
   });
 
-  // Add event listeners to "Add to Cart" buttons
+  // "Add to Cart" Button Functionality
   document.querySelectorAll(".add-to-cart").forEach((button) => {
     button.addEventListener("click", function () {
-      const productId = this.dataset.id;
-      const productName = this.dataset.name;
-      const productPrice = this.dataset.price;
+      const id = this.dataset.id;
+      const name = this.dataset.name;
+      const price = parseFloat(this.dataset.price);
+      const stock = parseInt(this.dataset.stock);
 
-      addToCart(productId, productName, productPrice);
+      if (stock <= 0) {
+        Swal.fire({
+          icon: "error",
+          title: "Out of Stock",
+          text: `${name} is not available in stock!`,
+        });
+        return;
+      }
+
+      addToCart(id, name, price, stock);
     });
   });
-};
 
+
+
+// Add to Cart Function
+const addToCarts = (id, name, price, stock) => {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingItem = cart.find((item) => item.id === id);
+
+  if (existingItem) {
+    if (existingItem.quantity < stock) {
+      existingItem.quantity++;
+    } else {
+      Swal.fire({
+        icon: "warning",
+        title: "Stock Limit Reached",
+        text: `Only ${stock} items available in stock!`,
+      });
+      return;
+    }
+  } else {
+    cart.push({ id, name, price, quantity: 1 });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  Swal.fire({
+    icon: "success",
+    title: "Added to Cart",
+    text: `${name} added successfully!`,
+  });
+
+};
+}
 
 
 
@@ -302,3 +360,26 @@ productLoad();
 keybordLoad();
 
 HeadphoneLoad();
+
+
+
+
+
+
+
+
+/* <a href="cart_details.html?product_id=${keybord.id}" class="btn btn-outline-primary me-2"> */
+
+// data-id="${keybord.id}" 
+// data-name="${keybord.name}" 
+// data-price="${keybord.price}" 
+// data-stock="${keybord.stock}">
+
+
+
+/* <a href="cart_details.html?product_id=${headphone.id}" class="btn btn-outline-primary me-2"></a> */
+
+// data-id="${headphone.id}" 
+// data-name="${headphone.name}" 
+// data-price="${headphone.price}" 
+// data-stock="${headphone.stock}">

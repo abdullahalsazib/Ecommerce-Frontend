@@ -1,37 +1,48 @@
 
 
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
+// const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-const cartBody = document.getElementById("cart-body");
-const totalAmountElement = document.getElementById("total-amount");
+// const cartBody = document.getElementById("cart-body");
+// const totalAmountElement = document.getElementById("total-amount");
 
-let totalAmount = 0;
+// let totalAmount = 0;
 
-if (cart.length > 0) {
-    cart.forEach(item => {
-        const itemTotal = item.quantity * item.price; 
-        totalAmount += itemTotal; 
+// if (cart.length > 0) {
+//     cart.forEach(item => {
+//         const itemTotal = item.quantity * item.price; 
+//         totalAmount += itemTotal; 
 
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${item.name}</td>
-            <td class="text-success fw-bold">$${item.price}</td>
-            <td>${item.quantity}</td>
-            <td class="text-danger fw-bold">$${itemTotal}</td>
-        `;
-        cartBody.appendChild(row);
-    });
+//         const row = document.createElement("tr");
+//         row.innerHTML = `
+//             <td>${item.name}</td>
+//             <td class="text-success fw-bold">$${item.price}</td>
+//             <td>${item.quantity}</td>
+//             <td class="text-danger fw-bold">$${itemTotal}</td>
+//             <td class="btn btn-danger fw-bold">Delete</td>
+//         `;
+//         cartBody.appendChild(row);
+//     });
 
 
-    totalAmountElement.textContent = `Total: $${totalAmount}`;
-} else {
+//     totalAmountElement.textContent = `Total: $${totalAmount}`;
+// } else {
 
-    const row = document.createElement("tr");
-    row.innerHTML = `<td colspan="4" class="text-center text-danger fw-bold">Cart is empty</td>`;
-    cartBody.appendChild(row);
+//     const row = document.createElement("tr");
+//     row.innerHTML = `<td colspan="4" class="text-center text-danger fw-bold">Cart is empty</td>`;
+//     cartBody.appendChild(row);
 
-    totalAmountElement.textContent = "Total: $0";
-}
+//     totalAmountElement.textContent = "Total: $0";
+// }
+
+
+
+
+
+
+
+
+
+
 
 
 
