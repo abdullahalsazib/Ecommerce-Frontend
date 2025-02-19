@@ -135,7 +135,6 @@ const payButton = () => {
     })
     .catch(error => {
         console.error('Error creating order:', error);
-        alert("An error occurred while creating the order.");
     });
 };
 
@@ -165,7 +164,7 @@ const fetchOrders = () => {
             row.innerHTML = `
                 <td>${order.id}</td>
                 <td>${order.total_amount} TK</td>
-                <td>${order.is_paid ? 'Pay Complete' : 'Payment'}</td>
+                <td>${order.is_paid ? 'Complete' : 'Payment'}</td>
             `;
             orderTableBody.appendChild(row);
         });
@@ -173,7 +172,7 @@ const fetchOrders = () => {
     })
     .catch(error => {
         console.error('Error fetching orders:', error);
-        alert('Failed to fetch orders.');
+   
     });
 };
 
