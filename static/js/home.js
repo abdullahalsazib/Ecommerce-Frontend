@@ -4,7 +4,6 @@ const user_id = localStorage.getItem("user_id");
 console.log(user_id);
 
 const productLoad = (search) => {
-  console.log("Search Query:", search);
   const url =
     search && search.trim() !== ""
       ? `${baseURL}?brand=${search}`
@@ -15,8 +14,9 @@ const productLoad = (search) => {
     .then((data) => displayProduct(data));
 };
 
+
+
 const displayProduct = (products) => {
-  // console.log("Fetched Products:", products);
   const parent = document.getElementById("slider-container");
   parent.innerHTML = "";
 
@@ -59,6 +59,7 @@ const displayProduct = (products) => {
     Add To Cart
      </button>
 
+
   </div>
   </div>
 </div>
@@ -69,7 +70,7 @@ const displayProduct = (products) => {
 
 document.querySelectorAll(".add-to-cart").forEach((button) => {
   button.addEventListener("click", (event) => {
-    const targetButton = event.target.closest(".add-to-cart"); // Ensure button element
+    const targetButton = event.target.closest(".add-to-cart"); 
     if (!targetButton) return;
 
     const product = {
@@ -80,7 +81,6 @@ document.querySelectorAll(".add-to-cart").forEach((button) => {
       quantity: 1,
     };
 
-    console.log("Adding Product:", product); // Debugging
 
     if (!product.id || !product.name) {
       alert("Invalid product data!");
@@ -114,8 +114,11 @@ const addToCart = (product) => {
 }
 
 
-const keybordURL = "http://127.0.0.1:8000/keybord/";
 
+
+
+
+const keybordURL = "http://127.0.0.1:8000/keybord/";
 const keybordLoad = (search = "") => {
   console.log("Search Query:", search);
   const url =
@@ -129,7 +132,7 @@ const keybordLoad = (search = "") => {
 };
 
 const displayKeybord = (keybords) => {
-  console.log("Fetched Products:", keybords);
+
   const parent = document.getElementById("slider-container-keybord");
   parent.innerHTML = "";
 
@@ -165,12 +168,7 @@ const displayKeybord = (keybords) => {
           <a href="/cart.html" class="btn btn-outline-primary me-2">
               <i class="fas fa-info-circle"></i> Details
             </a>
-            <button class="btn btn-primary btn-sm w-50 add-to-cart" 
-              data-id="${keybord.id}" 
-              data-name="${keybord.name}" 
-              data-price="${keybord.price}" 
-              data-stock="${keybord.stock}">
-              <i class="fas fa-shopping-cart"></i> Add To Cart
+            <button class="btn btn-primary btn-sm w-50 add-to-cart"<i class="fas fa-shopping-cart"></i> Add To Cart
             </button>
           </div>
         </div>
@@ -181,6 +179,8 @@ const displayKeybord = (keybords) => {
 
   setupEventListeners();
 };
+
+
 
 
 
@@ -222,7 +222,7 @@ const HeadphoneLoad = (search = "") => {
 };
 
 const displayHeadphone = (headphones) => {
-  console.log("Fetched Products:", headphones);
+
   const parent = document.getElementById("slider-container-headphone");
   parent.innerHTML = "";
 
@@ -255,10 +255,7 @@ const displayHeadphone = (headphones) => {
               <i class="fas fa-info-circle"></i> Details
             </a>
             <button class="btn btn-primary btn-sm w-50 add-to-cart" 
-              data-id="${headphone.id}" 
-              data-name="${headphone.name}" 
-              data-price="${headphone.price}" 
-              data-stock="${headphone.stock}">
+
               <i class="fas fa-shopping-cart"></i> Add To Cart
             </button>
           </div>
@@ -268,30 +265,10 @@ const displayHeadphone = (headphones) => {
     parent.appendChild(li);
   });
 
-  // "Add to Cart" Button Functionality
-  document.querySelectorAll(".add-to-cart").forEach((button) => {
-    button.addEventListener("click", function () {
-      const id = this.dataset.id;
-      const name = this.dataset.name;
-      const price = parseFloat(this.dataset.price);
-      const stock = parseInt(this.dataset.stock);
-
-      if (stock <= 0) {
-        Swal.fire({
-          icon: "error",
-          title: "Out of Stock",
-          text: `${name} is not available in stock!`,
-        });
-        return;
-      }
-
-      addToCart(id, name, price, stock);
-    });
-  });
 
 
 
-// Add to Cart Function
+
 const addToCarts = (id, name, price, stock) => {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const existingItem = cart.find((item) => item.id === id);
@@ -328,7 +305,6 @@ const loadBrand = () => {
   fetch("http://127.0.0.1:8000/Brand/")
     .then((res) => res.json())
     .then((data) => {
-      console.log("Fetched brands:", data);
 
       const parent = document.getElementById("brand");
       parent.innerHTML = `<option value="">Brand</option>`;

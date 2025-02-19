@@ -38,7 +38,7 @@ if (productId) {
             quantity: 1,
           };
           addToCart(product);
-          // pass the products
+     
           
       })
 

@@ -19,6 +19,9 @@ const navbarLoad = () => {
           <li class="p-2">
             <a class="fw-bold text-decoration-none bg-light text-black p-2 rounded d-block" href="profile.html">Profile</a>
           </li>
+            <li class="p-2">
+            <a class="fw-bold text-decoration-none bg-light text-black p-2 rounded d-block" href="order_details.html">Order</a>
+          </li>
           <li class="p-2">
             <form id="logout" onsubmit="handleLogout(event)">
               <button type="submit" class="btn btn-light text-danger fw-bold px-4 py-2 rounded">Logout</button>
