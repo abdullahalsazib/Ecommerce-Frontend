@@ -1,4 +1,4 @@
-const baseURL = "http://127.0.0.1:8000/product/";
+const baseURL = "https://ecommerce-backend-4yjb.onrender.com/product/";
 const user_id = localStorage.getItem("user_id");
 
 console.log(user_id);
@@ -118,7 +118,7 @@ const addToCart = (product) => {
 
 
 
-const keybordURL = "http://127.0.0.1:8000/keybord/";
+const keybordURL = "https://ecommerce-backend-4yjb.onrender.com/keybord/";
 const keybordLoad = (search = "") => {
   console.log("Search Query:", search);
   const url =
@@ -208,7 +208,7 @@ const addToCart = (id, name, price) => {
 
 
 
-const headphoneURL = "http://127.0.0.1:8000/headphone/";
+const headphoneURL = "https://ecommerce-backend-4yjb.onrender.com/headphone/";
 
 const HeadphoneLoad = (search = "") => {
   console.log("Search Query:", search);
@@ -302,7 +302,7 @@ const addToCarts = (id, name, price, stock) => {
 
 
 const loadBrand = () => {
-  fetch("http://127.0.0.1:8000/Brand/")
+  fetch("https://ecommerce-backend-4yjb.onrender.com/Brand/")
     .then((res) => res.json())
     .then((data) => {
 

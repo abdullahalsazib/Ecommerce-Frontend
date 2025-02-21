@@ -2,7 +2,7 @@ const userProfile = () => {
   const user_id = localStorage.getItem("user_id"); // Get the user ID
   console.log("Logged-in User ID:", user_id);
 
-  fetch("http://127.0.0.1:8000/account/user/")
+  fetch("https://ecommerce-backend-4yjb.onrender.com/account/user/")
     .then((res) => res.json())
     .then((data) => {
       const currentUser = data.find((item) => item.id === parseInt(user_id));

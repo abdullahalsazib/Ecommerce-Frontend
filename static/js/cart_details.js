@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get("product_id");
 
 if (productId) {
-  fetch(`http://127.0.0.1:8000/product/${productId}/`)
+  fetch(`https://ecommerce-backend-4yjb.onrender.com/product/${productId}/`)
     .then((res) => res.json())
     .then((product) => {
       const productDetails = document.getElementById("product-details");
@@ -62,7 +62,6 @@ const addToCart = (product) => {
 
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(`${product.name} added to cart!`);
-  console.log("HELLO", cart);
 }
 
 
@@ -90,7 +89,7 @@ const productReview = (event) => {
     product: product,
   };
   console.log(data);
-  fetch("http://127.0.0.1:8000/review/", {
+  fetch("https://ecommerce-backend-4yjb.onrender.com/review/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

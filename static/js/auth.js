@@ -25,7 +25,7 @@ const handleRegistration = (event) => {
       )
        {
   
-        fetch("http://127.0.0.1:8000/account/register/", {
+        fetch("https://ecommerce-backend-4yjb.onrender.com/account/register/", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(info),
@@ -39,7 +39,7 @@ const handleRegistration = (event) => {
               icon: 'success',
               confirmButtonText: 'OK'
             }).then(()=>{
-               window.location.href="login.html";
+               window.location.href="https://peaceful-pasca-10d022.netlify.app/login.html";
             })
 
 
@@ -77,7 +77,7 @@ const handleRegistration = (event) => {
     console.log(username,password);
     
     if((username,password)){
-      fetch("http://127.0.0.1:8000/account/login/",{
+      fetch("https://ecommerce-backend-4yjb.onrender.com/account/login/",{
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ username, password }),
@@ -131,7 +131,7 @@ const handleLogout = (event) => {
     console.log("Logging out...");
     const token = localStorage.getItem("token");
     console.log(token);
-    fetch("http://127.0.0.1:8000/account/logout/", {
+    fetch("https://ecommerce-backend-4yjb.onrender.com/account/logout/", {
       method: "GET",
       headers: {
         Authorization: `Token ${token}`,
@@ -151,7 +151,7 @@ const handleLogout = (event) => {
           icon: 'success',
           confirmButtonText: 'OK'
         }).then(()=>{
-           window.location.href="home.html";
+           window.location.href="https://peaceful-pasca-10d022.netlify.app/home.html";
         })
         
       })
@@ -163,13 +163,5 @@ const handleLogout = (event) => {
 
 
 
-
-
-
-
-
-
-
-  
 
 
