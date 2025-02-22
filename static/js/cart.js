@@ -144,13 +144,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+  const DeleteALL = (event) => {
+    event.preventDefault()
+    
+    localStorage.removeItem("cart"); 
 
+    window.dispatchEvent(new Event("storage"));
 
-  // const removeCart = () => {
-  //   localStorage.removeItem("cart");
-  //   console.log("🔹 কার্ট মুছে ফেলা হয়েছে");
-  // };
-  // removeCart();
+  }
+
 
 
 

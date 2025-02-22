@@ -10,7 +10,7 @@ if (productId) {
         <div class="card shadow-lg p-5">
           <div class="row">
             <div class="col-md-6 text-center">
-              <img src="${product.image}" alt="${product.name}" class="img-fluid rounded">
+              <img src="${product.image_url}" alt="${product.name}" class="img-fluid rounded">
             </div>
             <div class="col-md-6">
               <h2 class="fw-bold">${product.name}</h2>

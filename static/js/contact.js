@@ -1,6 +1,4 @@
 
-
-
 const user_id = localStorage.getItem("user_id");
 console.log(user_id);
 
@@ -61,7 +59,7 @@ const contact = (event) => {
             icon: 'error',
             confirmButtonText: 'OK'
         }).then(() => {
-            window.location.href = "https://peaceful-pasca-10d022.netlify.app/login.html";
+            window.location.href = "login.html";
         });
     }
 };

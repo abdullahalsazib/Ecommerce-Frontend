@@ -4,10 +4,7 @@ const user_id = localStorage.getItem("user_id");
 console.log(user_id);
 
 const productLoad = (search) => {
-  const url =
-    search && search.trim() !== ""
-      ? `${baseURL}?brand=${search}`
-      : `${baseURL}`;
+  const url = search && search.trim() !== "" ? `${baseURL}?brand=${search}`: `${baseURL}`;
   console.log(url);
   fetch(url)
     .then((res) => res.json())
@@ -17,6 +14,7 @@ const productLoad = (search) => {
 
 
 const displayProduct = (products) => {
+  console.log(products);
   const parent = document.getElementById("slider-container");
   parent.innerHTML = "";
 
@@ -28,9 +26,7 @@ const displayProduct = (products) => {
 
   products.forEach((product) => {
     const li = document.createElement("li");
-    const imageUrl = product.image.startsWith("http")
-      ? product.image
-      : `${baseURL}${product.image}`;
+    const imageUrl = product.image_url ? product.image_url : "";
 
     const descriptionText = (product.description || "").trim();
     const descriptionWords =
@@ -48,7 +44,7 @@ const displayProduct = (products) => {
     <h5 class="card-title text-dark fw-bold">${product.name}</h5>
     <p class="card-text text-muted small flex-grow-1">${descriptionWords}</p>
     <h6 class="text-primary fw-bold">Price: $${product.price}</h6>
-     <h6 class="text-black fw-bold">${product.brand}</h6>
+     <h6 class="text-black fw-bold">${product.brand_name}</h6>
 
     <div class="d-flex justify-content-between mt-3">
 
@@ -132,6 +128,7 @@ const keybordLoad = (search = "") => {
 };
 
 const displayKeybord = (keybords) => {
+  console.log(keybords);
 
   const parent = document.getElementById("slider-container-keybord");
   parent.innerHTML = "";
@@ -144,9 +141,7 @@ const displayKeybord = (keybords) => {
 
   keybords.forEach((keybord) => {
     const li = document.createElement("li");
-    const imageUrl = keybord.image.startsWith("http")
-      ? keybord.image
-      : `${keybordURL}${keybord.image}`;
+    const imageUrl = keybord.image_url ? keybord.image_url : "";
 
     const descriptionText = (keybord.description || "").trim();
     const descriptionWords =
@@ -162,7 +157,7 @@ const displayKeybord = (keybords) => {
           <h5 class="card-title text-dark fw-bold">${keybord.name}</h5>
           <p class="card-text text-muted small flex-grow-1">${descriptionWords}</p>
           <h6 class="text-primary fw-bold">Price: $${keybord.price}</h6>
-          <h6 class="text-black fw-bold">${keybord.brand}</h6>
+          <h6 class="text-black fw-bold">${keybord.brand_name}</h6>
 
           <div class="d-flex justify-content-between mt-3">
           <a href="/cart.html" class="btn btn-outline-primary me-2">
@@ -222,7 +217,7 @@ const HeadphoneLoad = (search = "") => {
 };
 
 const displayHeadphone = (headphones) => {
-
+  console.log(headphones);
   const parent = document.getElementById("slider-container-headphone");
   parent.innerHTML = "";
 
@@ -233,7 +228,7 @@ const displayHeadphone = (headphones) => {
 
   headphones.forEach((headphone) => {
     const li = document.createElement("li");
-    const imageUrl = headphone.image.startsWith("http") ? headphone.image : `${headphoneURL}${headphone.image}`;
+    const imageUrl = headphone.image_url ? headphone.image_url : "";
 
     const descriptionText = (headphone.description || "").trim();
     const descriptionWords = descriptionText.split(/\s+/).slice(0, 5).join(" ") + "...";
@@ -248,7 +243,7 @@ const displayHeadphone = (headphones) => {
           <h5 class="card-title text-dark fw-bold">${headphone.name}</h5>
           <p class="card-text text-muted small flex-grow-1">${descriptionWords}</p>
           <h6 class="text-primary fw-bold">Price: $${headphone.price}</h6>
-          <h6 class="text-black fw-bold">${headphone.brand}</h6>
+          <h6 class="text-black fw-bold">${headphone.brand_name}</h6>
           
           <div class="d-flex justify-content-between mt-3">
             <a href="/cart.html" class="btn btn-outline-primary me-2 details-btn">
