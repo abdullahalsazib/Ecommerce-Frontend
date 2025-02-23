@@ -1,4 +1,4 @@
-const baseURL = "https://ecommerce-backend-4yjb.onrender.com/product/";
+const baseURL = "http://127.0.0.1:8000/product/";
 const user_id = localStorage.getItem("user_id");
 
 console.log(user_id);
