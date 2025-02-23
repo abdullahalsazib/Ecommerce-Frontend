@@ -1,11 +1,10 @@
-
 const navbarLoad = () => {
   const navbar = document.getElementById("navbarElement");
   const user_id = localStorage.getItem("user_id");
 
   if (user_id) {
     navbar.innerHTML = `
-      <li class="nav-item"><a class="nav-link text-light fw-bold" href="home.html">HOME</a></li>
+      <li class="nav-item"><a class="nav-link text-light fw-bold" href="index.html">HOME</a></li>
       <li class="nav-item"><a class="nav-link text-light fw-bold" href="service.html">SERVICE</a></li>
       <li class="nav-item"><a class="nav-link text-light fw-bold" href="about.html">ABOUT</a></li>
       <li class="nav-item"><a class="nav-link text-light fw-bold" href="contact.html">CONTACT</a></li>
@@ -33,7 +32,7 @@ const navbarLoad = () => {
     `;
   } else {
     navbar.innerHTML = `
-      <li class="nav-item"><a class="nav-link text-light fw-bold" href="home.html">HOME</a></li>
+      <li class="nav-item"><a class="nav-link text-light fw-bold" href="index.html">HOME</a></li>
       <li class="nav-item"><a class="nav-link text-light fw-bold" href="service.html">SERVICE</a></li>
       <li class="nav-item"><a class="nav-link text-light fw-bold" href="about.html">ABOUT US</a></li>
       <li class="nav-item"><a class="nav-link text-light fw-bold" href="contact.html">CONTACT</a></li>
@@ -45,6 +44,3 @@ const navbarLoad = () => {
 };
 
 navbarLoad();
-
-
-
