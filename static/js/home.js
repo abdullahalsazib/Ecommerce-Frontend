@@ -1,11 +1,11 @@
 const baseURL = "https://ecommerce-backend-4yjb.onrender.com/product/";
 const user_id = localStorage.getItem("user_id");
 
-console.log(user_id);
+// console.log(user_id);
 
 const productLoad = (search) => {
   const url = search && search.trim() !== "" ? `${baseURL}?brand=${search}`: `${baseURL}`;
-  console.log(url);
+  // console.log(url);
   fetch(url)
     .then((res) => res.json())
     .then((data) => displayProduct(data));
@@ -14,7 +14,7 @@ const productLoad = (search) => {
 
 
 const displayProduct = (products) => {
-  console.log(products);
+  // console.log(products);
   const parent = document.getElementById("slider-container");
   parent.innerHTML = "";
 
@@ -130,10 +130,10 @@ const addToCart = (product) => {
 
 const keybordURL = "https://ecommerce-backend-4yjb.onrender.com/keybord/";
 const keybordLoad = (search = "") => {
-  console.log("Search Query:", search);
+  // console.log("Search Query:", search);
   const url =
     search.trim() !== "" ? `${keybordURL}?brand=${search}` : keybordURL;
-  console.log("Fetching from:", url);
+  // console.log("Fetching from:", url);
 
   fetch(url)
     .then((res) => res.json())
@@ -142,7 +142,7 @@ const keybordLoad = (search = "") => {
 };
 
 const displayKeybord = (keybords) => {
-  console.log(keybords);
+  // console.log(keybords);
 
   const parent = document.getElementById("slider-container-keybord");
   parent.innerHTML = "";
@@ -220,9 +220,9 @@ const addToCart = (id, name, price) => {
 const headphoneURL = "https://ecommerce-backend-4yjb.onrender.com/headphone/";
 
 const HeadphoneLoad = (search = "") => {
-  console.log("Search Query:", search);
+  // console.log("Search Query:", search);
   const url = search.trim() !== "" ? `${headphoneURL}?brand=${search}` : headphoneURL;
-  console.log("Fetching from:", url);
+  // console.log("Fetching from:", url);
 
   fetch(url)
     .then((res) => res.json())
@@ -231,7 +231,7 @@ const HeadphoneLoad = (search = "") => {
 };
 
 const displayHeadphone = (headphones) => {
-  console.log(headphones);
+  // console.log(headphones);
   const parent = document.getElementById("slider-container-headphone");
   parent.innerHTML = "";
 

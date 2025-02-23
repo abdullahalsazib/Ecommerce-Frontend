@@ -14,7 +14,7 @@ const handleRegistration = (event) => {
     password,
     confirm_password,
   };
-  console.log(info);
+  // console.log(info);
 
   if (password === confirm_password) {
     if (
@@ -29,7 +29,7 @@ const handleRegistration = (event) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           Swal.fire({
             title: "Email Confirmed!",
             text: "Your email has been verified successfully. Please log in to continue.",
@@ -59,7 +59,7 @@ const handleLogin = (event) => {
     window.location.href = "admin_panel.html";
     return;
   } else {
-    console.log(username, password);
+    // console.log(username, password);
 
     if ((username, password)) {
       fetch("https://ecommerce-backend-4yjb.onrender.com/account/login/", {
@@ -69,7 +69,7 @@ const handleLogin = (event) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           localStorage.setItem("token", data.token);
           localStorage.setItem("user_id", data.user_id);
           if (data.token && data.user_id) {
@@ -106,9 +106,9 @@ const showModal = (modalId, message) => {
 const handleLogout = (event) => {
   event.preventDefault();
 
-  console.log("Logging out...");
+  // console.log("Logging out...");
   const token = localStorage.getItem("token");
-  console.log(token);
+  // console.log(token);
   fetch("https://ecommerce-backend-4yjb.onrender.com/account/logout/", {
     method: "GET",
     headers: {
@@ -118,7 +118,7 @@ const handleLogout = (event) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log("Logout successful", data);
+      // console.log("Logout successful", data);
       localStorage.removeItem("token");
       localStorage.removeItem("user_id");
 

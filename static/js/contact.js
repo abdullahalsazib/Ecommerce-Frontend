@@ -1,6 +1,6 @@
 
 const user_id = localStorage.getItem("user_id");
-console.log(user_id);
+// console.log(user_id);
 
 const contact = (event) => {
     event.preventDefault();
@@ -29,7 +29,7 @@ const contact = (event) => {
         "user": user_id,
     };
 
-    console.log("Sending data:", data);
+    // console.log("Sending data:", data);
 
     if (user_id) {
         fetch("https://ecommerce-backend-4yjb.onrender.com/account/contact/", {
@@ -41,7 +41,7 @@ const contact = (event) => {
         })
         .then(res => res.json())
         .then(response => {
-            console.log("Server Response:", response);
+            // console.log("Server Response:", response);
             alert("Successfully sent the message!");
 
             document.getElementById("name").value = "";

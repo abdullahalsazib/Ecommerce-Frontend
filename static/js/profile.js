@@ -1,6 +1,6 @@
 const userProfile = () => {
   const user_id = localStorage.getItem("user_id");
-  console.log("Logged-in User ID:", user_id);
+  // console.log("Logged-in User ID:", user_id);
 
   fetch("https://ecommerce-backend-4yjb.onrender.com/account/user/")
     .then((res) => res.json())

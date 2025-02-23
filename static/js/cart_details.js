@@ -86,10 +86,10 @@ const addToCart = (product) => {
 
 const urlParam = new URLSearchParams(window.location.search);
 const product = urlParams.get("product_id");
-console.log(product);
+// console.log(product);
 
 const user_id = localStorage.getItem("user_id");
-console.log(user_id);
+// console.log(user_id);
 
 const productReview = (event) => {
   event.preventDefault();
@@ -103,7 +103,7 @@ const productReview = (event) => {
     user: user_id,
     product: product,
   };
-  console.log(data);
+  // console.log(data);
   fetch("https://ecommerce-backend-4yjb.onrender.com/review/", {
     method: "POST",
     headers: {
@@ -113,7 +113,7 @@ const productReview = (event) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       alert("succesfuly send this message");
     })
     .catch((err) => console.log(err));

@@ -9,9 +9,9 @@ const payButton = (event) => {
 
     const cartTotalText = document.getElementById("cartTotal").textContent;
     const total_amount = parseInt(cartTotalText.split(" TK")[0]);
-    console.log(total_amount);
+    // console.log(total_amount);
 
-    console.log(user_id, name, email, total_amount);
+    // console.log(user_id, name, email, total_amount);
 
     fetch("https://ecommerce-backend-4yjb.onrender.com/order/", {
         method: "POST",
