@@ -54,8 +54,6 @@ const displayProduct = (products) => {
     <i class="fas fa-shopping-cart"></i> 
     Add To Cart
      </button>
-
-
   </div>
   </div>
 </div>
@@ -160,7 +158,7 @@ const displayKeybord = (keybords) => {
           <h6 class="text-black fw-bold">${keybord.brand_name}</h6>
 
           <div class="d-flex justify-content-between mt-3">
-          <a href="/cart.html" class="btn btn-outline-primary me-2">
+          <a href="" class="btn btn-outline-primary me-2">
               <i class="fas fa-info-circle"></i> Details
             </a>
             <button class="btn btn-primary btn-sm w-50 add-to-cart"<i class="fas fa-shopping-cart"></i> Add To Cart
