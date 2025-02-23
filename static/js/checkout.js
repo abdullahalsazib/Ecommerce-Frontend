@@ -1,9 +1,8 @@
 
 
+const payButton = (event) => {
+    event.preventDefault();
 
-
-
-const payButton = () => {
     const user_id = localStorage.getItem("user_id");
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -85,7 +84,7 @@ const fetchOrders = () => {
             row.innerHTML = `
                 <td>${order.id}</td>
                 <td>${order.total_amount} TK</td>
-                <td>${order.is_paid ? 'Complete' : 'Payment'}</td>
+                <td>${order.is_paid ? 'Complete' : 'Payment Failed'}</td>
             `;
             orderTableBody.appendChild(row);
         });

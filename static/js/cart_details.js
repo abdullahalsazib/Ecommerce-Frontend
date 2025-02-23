@@ -29,7 +29,22 @@ if (productId) {
       `;
       let add_to_cart = document.querySelector(".add-to-cart")
       add_to_cart.addEventListener('click', (event)  => {
-
+        
+     if (!user_id) {
+      Swal.fire({
+        title: "Login Required",
+        text: "You need to log in first!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Login Now",
+        cancelButtonText: "Cancel",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "https://joyful-begonia-6e2001.netlify.app/login.html"; 
+        }
+      });
+      return;
+    }
           const product = {
             id: event.target.dataset.id,
             name: event.target.dataset.name,

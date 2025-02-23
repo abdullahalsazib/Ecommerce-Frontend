@@ -1,15 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
+  
   const cartTableBody = document.getElementById("cartTableBody");
   const cartTotal = document.getElementById("cartTotal");
   const checkoutButton = document.getElementById("checkoutButton");
 
   const loadCart = () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
 
     displayCart(cart);
+
   };
 
   const displayCart = (cart) => {
+
+
     cartTableBody.innerHTML = "";
     let total = 0;
 
@@ -55,6 +60,24 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const attachCartListeners = () => {
+
+    if (!user_id) {
+      Swal.fire({
+        title: "Login Required",
+        text: "You need to log in first!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Login Now",
+        cancelButtonText: "Cancel",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "https://joyful-begonia-6e2001.netlify.app/login.html"; 
+        }
+      });
+      return;
+    }
+
+    
     document.querySelectorAll(".increase-qty").forEach((button) => {
       button.addEventListener("click", (e) => {
         const productId = e.target.getAttribute("data-id");

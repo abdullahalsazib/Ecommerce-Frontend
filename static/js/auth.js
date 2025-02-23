@@ -151,7 +151,7 @@ const handleLogout = (event) => {
           icon: 'success',
           confirmButtonText: 'OK'
         }).then(()=>{
-           window.location.href="https://peaceful-pasca-10d022.netlify.app/home.html";
+           window.location.href="home.html";
         })
         
       })

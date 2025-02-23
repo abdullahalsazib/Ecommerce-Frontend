@@ -54,6 +54,8 @@ const displayProduct = (products) => {
     <i class="fas fa-shopping-cart"></i> 
     Add To Cart
      </button>
+
+
   </div>
   </div>
 </div>
@@ -64,6 +66,22 @@ const displayProduct = (products) => {
 
 document.querySelectorAll(".add-to-cart").forEach((button) => {
   button.addEventListener("click", (event) => {
+
+    if (!user_id) {
+      Swal.fire({
+        title: "Login Required",
+        text: "You need to log in first!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Login Now",
+        cancelButtonText: "Cancel",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "https://joyful-begonia-6e2001.netlify.app/login.html"; 
+        }
+      });
+      return;
+    }
     const targetButton = event.target.closest(".add-to-cart"); 
     if (!targetButton) return;
 
@@ -103,8 +121,6 @@ const addToCart = (product) => {
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(`${product.name} added to cart!`);
 };
-
-
 }
 
 
@@ -149,7 +165,7 @@ const displayKeybord = (keybords) => {
       <div class="card border-0 rounded-1 overflow-hidden bg-light">
         <div class="position-relative">
           <img src="${imageUrl}" class="card-img-top img-fluid w-100" style="height: 250px; object-fit: cover;" loading="lazy" alt="${keybord.name}">
-          <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock: ${keybord.stock}</span>
+          <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock Out</span>
         </div>
         <div class="card-body d-flex flex-column p-4">
           <h5 class="card-title text-dark fw-bold">${keybord.name}</h5>
@@ -235,7 +251,7 @@ const displayHeadphone = (headphones) => {
       <div class="card border-0 rounded-1 overflow-hidden bg-light">
         <div class="position-relative">
           <img src="${imageUrl}" class="card-img-top img-fluid w-100" style="height: 250px; object-fit: cover;" loading="lazy" alt="${headphone.name}">
-          <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock: ${headphone.stock}</span>
+          <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2">Stock Out</span>
         </div>
         <div class="card-body d-flex flex-column p-4">
           <h5 class="card-title text-dark fw-bold">${headphone.name}</h5>
@@ -244,7 +260,7 @@ const displayHeadphone = (headphones) => {
           <h6 class="text-black fw-bold">${headphone.brand_name}</h6>
           
           <div class="d-flex justify-content-between mt-3">
-            <a href="/cart.html" class="btn btn-outline-primary me-2 details-btn">
+            <a href="" class="btn btn-outline-primary me-2 details-btn">
               <i class="fas fa-info-circle"></i> Details
             </a>
             <button class="btn btn-primary btn-sm w-50 add-to-cart" 
@@ -335,20 +351,3 @@ HeadphoneLoad();
 
 
 
-
-
-/* <a href="cart_details.html?product_id=${keybord.id}" class="btn btn-outline-primary me-2"> */
-
-// data-id="${keybord.id}" 
-// data-name="${keybord.name}" 
-// data-price="${keybord.price}" 
-// data-stock="${keybord.stock}">
-
-
-
-/* <a href="cart_details.html?product_id=${headphone.id}" class="btn btn-outline-primary me-2"></a> */
-
-// data-id="${headphone.id}" 
-// data-name="${headphone.name}" 
-// data-price="${headphone.price}" 
-// data-stock="${headphone.stock}">
